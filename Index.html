@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Sports Live Stream</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+<style>
+body {
+    background-color: #f3f4f6;
+}
+.hero {
+    background-image: url('https://source.unsplash.com/1920x1080/?stadium');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: -1;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.custom-alert {
+    background-color: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    color: #92400e;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+.alert-link {
+    color: #f97316;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.alert-link:hover {
+    color: #ea580c;
+}
+.cta-button {
+    padding: 10px 20px;
+    background-color: #1e40af;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+.cta-button:hover {
+    background-color: #2563eb;
+}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Header Section -->
+<header class="bg-blue-600 text-white py-4 shadow-lg">
+<div class="container mx-auto text-center">
+    <h1 class="text-3xl font-bold">Sports Live Stream</h1>
+</div>
+</header>
+
+<!-- Custom Alert Section -->
+<section class="container mx-auto mt-4">
+<div class="custom-alert">
+    <strong>Don't miss out!</strong> Join our Telegram channel for the latest live sports updates. 
+    <a href="https://t.me/your_telegram_channel" target="_blank" class="alert-link">Click here to join</a>.
+</div>
+</section>
+
+<!-- Hero Section with overlay -->
+<section class="hero h-72 flex items-center justify-center text-white relative">
+<div class="text-center">
+    <h2 class="text-5xl font-bold mb-4">Watch Live Sports Anytime, Anywhere!</h2>
+    <p class="text-xl">Stream your favorite sports live in HD below.</p>
+</div>
+</section>
+
+<!-- Video Player Section -->
+<section class="container mx-auto mt-10 text-center">
+<h2 class="text-2xl font-bold mb-6">Live Stream</h2>
+
+<!-- Video Container -->
+<div class="video-container">
+    <video id="sports-stream" controls poster="https://source.unsplash.com/800x450/?sports,action">
+    <!-- Fallback for browsers that don't support HLS.js -->
+    Your browser does not support the video tag.
+    </video>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-blue-600 text-white py-6 mt-10">
+<div class="container mx-auto text-center">
+    <p>&copy; 2024 Sports Live Stream. All rights reserved.</p>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
